@@ -28,7 +28,7 @@ We are given a PCAP file. Inspecting this capture in Wireshark, we filter for HT
 
 The response header indicates that the Content-Type is image/gif, yet the response body begins with the MZ magic number for a PE file. Very suspicious.
 
-[+] ANSWER: >192.252.172.54
+> [+] ANSWER: 192.252.172.54
 
 2. What is the SHA256 hash of the malware?
 
@@ -41,7 +41,7 @@ To get the file hash, first we will get the file itself. in Wireshark, I went to
 In a powershell terminal, we use the following command to get the hash:
 ```Get-FileHash .\6ctf5JL -Algorithm SHA256```
 
-[+] ANSWER: >9B8FFDC8BA2B2CAA485CCA56A82B2DCBD251F65FB30BC88F0AC3DA6704E4D3C6
+> [+] ANSWER: 9B8FFDC8BA2B2CAA485CCA56A82B2DCBD251F65FB30BC88F0AC3DA6704E4D3C6
 
 3. What is the Family label of the malware?
 
@@ -51,7 +51,7 @@ Now that we have the SHA256 hash, we can switch back to our host machine and plu
 
 This does not look good for our infected machine... A fair amount of the security vendor results as well as the Family label suggests that this is a Pikabot sample.
 
-[+] ANSWER: >Pikabot
+> [+] ANSWER: Pikabot
 
 4. When was the malware first seen in the wild (UTC)?
 
@@ -59,7 +59,7 @@ In the Details section of the VirusTotal results, we can see the detection histo
 
 ![VirusTotal detection history](images/q4.png)
 
-[+] ANSWER: >2023-05-19 14:01:21
+> [+] ANSWER: 2023-05-19 14:01:21
 
 5. The malware used HTTPS traffic with a self-signed certificate. What are the ports, from smallest to largest?
 
@@ -69,7 +69,7 @@ Then, we compare the Issuer and Subject fields. If it's self-signed, they should
 
 ![Self-signed certificate](images/q5.png)
 
-[+] ANSWER: >2078, 2222, 32999
+> [+] ANSWER: 2078, 2222, 32999
 
 6. What is the id-at-localityName of the self-signed certificate associated with the first malicious IP?
 
@@ -77,7 +77,7 @@ To find the id-at-localityName, we can use the same filter as before and go to t
 
 ![Certificate id-at-localityName](images/q6.png)
 
-[+] ANSWER: >Pyopneumopericardium
+> [+] ANSWER: Pyopneumopericardium
 
 7. What is the notBefore time(UTC) for this self-signed certificate?
 
@@ -85,7 +85,7 @@ In the same certificate as before, all we have to do is navigate to validity.
 
 ![Certificate notBefore time](images/q7.png)
 
-[+] ANSWER: >2023-05-14 08:36:52
+> [+] ANSWER: 2023-05-14 08:36:52
 
 8. What was the domain used for tunneling?
 
@@ -93,7 +93,7 @@ Filtering by DNS, there were clear signs of DNS tunneling. By following the UDP 
 
 ![DNS tunneling UDP stream](images/q8.png)
 
-[+] ANSWER: >steasteel.net
+> [+] ANSWER: steasteel.net
 
 ## Lessons Learned
 
