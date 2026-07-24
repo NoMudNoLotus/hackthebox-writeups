@@ -21,3 +21,4 @@ I make an effort to include all relevant information that contributed to the sol
 | Machine | Type | Difficulty | Category |
 |---|---|---|---|
 | [Compromised](Sherlocks/SOC/Compromised/README.md) | Sherlock | Easy | SOC |
+| [Payload](Sherlocks/Malware-Analysis/Payload/README.md) | Sherlock | Easy | Malware Analysis |
